@@ -1,11 +1,20 @@
-<h2><%= @restaurant.name %></h2>
-<p><%= @restaurant.address %></p>
-<p><strong>Reviews</strong></p>
-<ul class="list-group">
-  <% @restaurant.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %></li>
-  <% end %>
-</ul>
+<div class = "d-flex m-4 each-restaurant">
+  <div class = "each-restaurant-description">
+    <h2><%= @restaurant.name %></h2>
+    <p><%= @restaurant.address %></p>
+  </div>
+  <div class ="each-restaurant-review">
+    <p><strong>Reviews</strong></p>
+  </div>
+</div>
+<div class = "each-restaurant-rating">
+    <ul class="list-group">
+      <% @restaurant.reviews.each do |review| %>
+        <li class="list-group-item"><%= review.content %>, RATING: <%= review.rating %></li>
+      <% end %>
+    </ul>
+  </div>
+
 
 <!--%= link_to "Delete this restaurant", restaurant_path(@restaurant), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %-->
 

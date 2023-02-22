@@ -1,4 +1,9 @@
-<% @restaurants.each do |restaurant| %>
-  <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
-  <p><%= restaurant.address %></p>
-<% end %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light navigation">
+  <h1>Restaurants</h1>
+</nav>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li class="my-item"><h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+    <p><%= restaurant.address %></p></li>
+  <% end %>
+</ul>
